@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Order</title>
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Order Product</h1>
+    <h2>{{ product.name }}</h2>
+
+    <form action="/pay" method="GET">
+        <input type="hidden" value="{{ product.id }}" name="productId">
+        <label>
+            your name <input type="text" placeholder="Full Name" name="fullName">
+        </label>
+        <label>
+            your email <input type="text" placeholder="email@address.example" name="emailAddress">
+        </label>
+        <label>
+            your phone <input type="text" placeholder="phone number" name="phoneNumber">
+        </label>
+        <button>PAY</button>
+        <!--HW add a checkbox "i agree with terms" and check if it is checked - server side-->
+        <label>
+            <input type="checkbox" name="agree" required>
+            Я согласен с условиями
+        </label>
+    </form>
+    
+</body>
+</html>

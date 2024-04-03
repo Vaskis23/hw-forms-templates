@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home e_shop</title>
+    <style>
+        img {
+            width: 200px;
+        }
+        li {
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to e - shop</h1>
+    <div>
+        <ul>
+            {% for product in products %}
+                <li>
+                    <h2>{{ product.name }}</h2>
+                    <img src="/images/{{ product.image }}">
+                    <div>
+                        {{ product.price }}
+                    </div>
+                    <a href="/buy/{{product.id}}">BUY</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
